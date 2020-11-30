@@ -1,20 +1,23 @@
 <template>
     <div class="row">
-        <div class="col-md-9">
-            <items-box title="New Items"></items-box>
-        </div>
-        <div class="col-md-3">
-            <items-box title="Popular Items"></items-box>
+        <div class="col-sm-12">
+            <items-box title="New Items" :items="items.new"></items-box>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        props: ["title"],
+        props: ["inputItems"],
+
+        data() {
+            return {
+                items: []
+            }
+        },
 
         mounted() {
-
+            this.items = JSON.parse(this.inputItems);
         }
     }
 </script>
