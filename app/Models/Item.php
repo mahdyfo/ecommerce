@@ -17,13 +17,12 @@ class Item extends Model
         return $this->belongsTo(Color::class);
     }
 
-    public static function getNewItems()
+    public static function newItems()
     {
-        return self::select('product_id', 'color_id', 'price')
+        return self::select('product_id', 'name', 'color_id', 'price')
             ->with('color', function($q){
                 $q->select('id', 'name', 'code');
             })
-            ->latest()
-            ->get();
+            ->latest();
     }
 }
