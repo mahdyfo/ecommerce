@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\ItemController::class, 'index'])->name('home');
+
+Route::group(['prefix' => 'ajax'], function(){
+    Route::get('items', [App\Http\Controllers\ItemController::class, 'search']);
+});
