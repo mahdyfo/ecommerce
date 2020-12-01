@@ -7,6 +7,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.Vue.use(require('vue-cookies'));
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,8 +21,8 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 //Components
-Vue.component('items-box', require('./components/ItemsBox.vue').default);
 Vue.component('item', require('./components/Item.vue').default);
+Vue.component('cart', require('./components/Cart.vue').default);
 
 //Pages
 Vue.component('homepage', require('./pages/Homepage.vue').default);
