@@ -10904,7 +10904,10 @@ a.text-dark:focus {
 }
 
 
+.item {
+    min-width: 315px;
+}
 
-
-
-
+.item {
+    min-width: 315px;
+}
